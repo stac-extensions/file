@@ -1,53 +1,55 @@
 {
-  "stac_version": "1.0.0-rc.1",
+  "stac_version": "1.0.0-beta.2",
   "stac_extensions": [
-    "https://stac-extensions.github.io/template/v1.0.0/schema.json"
+    "https://stac-extensions.github.io/file/v1.0.0/schema.json"
   ],
+  "id": "example",
   "type": "Collection",
-  "id": "collection",
-  "title": "A title",
-  "description": "A description",
-  "license": "Apache-2.0",
+  "title": "File Example",
+  "description": "This examples shows how to use the file extension for collection assets.",
   "extent": {
     "spatial": {
       "bbox": [
         [
-          172.9,
-          1.3,
-          173,
-          1.4
+          -180,
+          -90,
+          180,
+          90
         ]
       ]
     },
     "temporal": {
       "interval": [
         [
-          "2015-06-23T00:00:00Z",
-          null
+          "2012-01-15T12:00:00Z",
+          "2014-12-15T12:00:00Z"
         ]
       ]
     }
   },
-  "new_field": {
-    "x": 1,
-    "y": 2,
-    "z": 3
-  },
-  "another_one": [
-    1,
-    2,
-    3
-  ],
-  "summaries": {
-    "datetime": {
-      "minimum": "2015-06-23T00:00:00Z",
-      "maximum": "2019-07-10T13:44:56Z"
-    }
-  },
+  "license": "Apache-2.0",
   "links": [
     {
-      "href": "https://example.com/examples/collection.json",
-      "rel": "self"
+      "href": "https://example.com",
+      "type": "text/html",
+      "rel": "about"
     }
-  ]
+  ],
+  "assets": {
+    "thumbnail": {
+      "href": "logo.png",
+      "title": "A preview image for visualization.",
+      "type": "image/png",
+      "roles": [
+        "thumbnail"
+      ],
+      "file:data_type": "uint8",
+      "file:checksum": "90e4021044a8995dd50b6657a037a7839304535b",
+      "file:nodata": [
+        255
+      ],
+      "file:size": 153600,
+      "file:bits_per_sample": 8
+    }
+  }
 }

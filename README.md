@@ -1,7 +1,7 @@
 # File Info Extension Specification
 
 - **Title:** File Info
-- **Identifier:** <https://stac-extensions.github.io/file/v1.0.0/schema.json>
+- **Identifier:** <https://stac-extensions.github.io/file/v2.0.0/schema.json>
 - **Field Name Prefix:** file
 - **Scope:** Item, Collection
 - **Extension [Maturity Classification](https://github.com/radiantearth/stac-spec/tree/master/extensions/README.md#extension-maturity):** Proposal

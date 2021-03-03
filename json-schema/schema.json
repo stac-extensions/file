@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "https://stac-extensions.github.io/file/v2.0.0/schema.json#",
+  "$id": "https://stac-extensions.github.io/file/v1.0.0/schema.json#",
   "title": "File Info Extension Specification",
   "description": "STAC File Info Extension to a STAC Item, Catalog or Collection",
   "oneOf": [
@@ -67,7 +67,7 @@
           "contains": {
             "enum": [
               "file",
-              "https://stac-extensions.github.io/file/v2.0.0/schema.json"
+              "https://stac-extensions.github.io/file/v1.0.0/schema.json"
             ]
           }
         }

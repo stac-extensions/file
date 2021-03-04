@@ -16,6 +16,7 @@ that implement collection-level assets.
   - [Item example](examples/item.json): Shows the basic usage of the extension in a STAC Item
   - [Collection example](examples/collection.json): Shows the basic usage of the extension in a STAC Collection
 - [JSON Schema](json-schema/schema.json)
+- [Changelog](./CHANGELOG.md)
 
 ## *Asset Object* fields
 
@@ -31,9 +32,9 @@ The following fields can be used for assets (in the [`Asset Object`](https://git
 | file:nodata          | \[any]                                  | Value(s) for no-data.                                        |
 | file:size            | integer                                 | The file [size](#sizes), specified in bytes.                 |
 | file:unit            | string                                  | The unit of measurement for the values in the file, preferably compliant to [UDUNITS-2](https://ncics.org/portfolio/other-resources/udunits2/) units (singular). |
-| file:values          | \[[Mapping Object](#mapping-object)\] | Lists the value that are in the file and describes their meaning. See the [Mapping Object](#mapping-object) chapter for an example. If given, at least one array element is required. |
+| file:values          | \[[Mapping Object](#mapping-object)\]   | Lists the value that are in the file and describes their meaning. See the [Mapping Object](#mapping-object) chapter for an example. If given, at least one array element is required. |
 
-**Note:** File specific details should not be part of the Item Assets extension to Collections.
+**Note:** File specific details should not be part of the Item Assets Definition extension to Collections.
 
 ### Mapping Object
 
@@ -114,7 +115,3 @@ file with file content `test`.
 - Algorithm `sha2` (256 bits): `12209f86d081884c7d659a2feaa0c55ad015a3bf4f1b2b0b822cd15d6c15b0f00a08`
 - Algorithm `sha2` (256 bits truncated to 160 bits): `12149f86d081884c7d659a2feaa0c55ad015a3bf4f1b2b0b`
 - Algorithm `blake2b-128`: `90e4021044a8995dd50b6657a037a7839304535b`
-
-## Implementations
-
-None yet, still in proposal stage.

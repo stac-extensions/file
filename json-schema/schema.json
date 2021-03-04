@@ -1,61 +1,65 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
   "$id": "https://stac-extensions.github.io/file/v1.0.0/schema.json#",
-  "title": "File Info Extension Specification",
-  "description": "STAC File Info Extension to a STAC Item, Catalog or Collection",
+  "title": "File Info Extension",
+  "description": "STAC File Info Extension for STAC Items and STAC Collections.",
   "oneOf": [
     {
+      "$comment": "This is the schema for STAC Items.",
       "allOf": [
         {
-          "$ref": "#/definitions/item_type"
+          "type": "object",
+          "required": [
+            "type",
+            "assets"
+          ],
+          "properties": {
+            "type": {
+              "const": "Feature"
+            },
+            "assets": {
+              "type": "object",
+              "additionalProperties": {
+                "$ref": "#/definitions/fields"
+              }
+            }
+          }
         },
         {
           "$ref": "#/definitions/stac_extensions"
-        },
-        {
-          "$ref": "#/definitions/file_assets"
         }
       ]
     },
     {
+      "$comment": "This is the schema for STAC Collections.",
       "allOf": [
         {
-          "$ref": "#/definitions/collection_type"
-        },
-        {
-          "$ref": "#/definitions/stac_extensions"
-        },
-        {
-          "$ref": "#/definitions/file_assets"
+          "type": "object",
+          "required": [
+            "type"
+          ],
+          "properties": {
+            "type": {
+              "const": "Collection"
+            },
+            "assets": {
+              "type": "object",
+              "additionalProperties": {
+                "$ref": "#/definitions/fields"
+              }
+            },
+            "item_assets": {
+              "type": "object",
+              "additionalProperties": {
+                "$ref": "#/definitions/fields"
+              }
+            }
+          }
         }
       ]
     }
   ],
   "definitions": {
-    "item_type": {
-      "type": "object",
-      "required": [
-        "type"
-      ],
-      "properties": {
-        "type": {
-          "type": "string",
-          "const": "Feature"
-        }
-      }
-    },
-    "collection_type":  {
-      "type": "object",
-      "required": [
-        "type"
-      ],
-      "properties": {
-        "type": {
-          "type": "string",
-          "const": "Collection"
-        }
-      }
-    },
     "stac_extensions": {
       "type": "object",
       "required": [
@@ -65,28 +69,13 @@
         "stac_extensions": {
           "type": "array",
           "contains": {
-            "enum": [
-              "file",
-              "https://stac-extensions.github.io/file/v1.0.0/schema.json"
-            ]
+            "const": "https://stac-extensions.github.io/file/v1.0.0/schema.json"
           }
         }
       }
     },
-    "file_assets": {
-      "type": "object",
-      "properties": {
-        "assets": {
-          "type": "object",
-          "patternProperties": {
-            ".+": {
-              "$ref": "#/definitions/file"
-            }
-          }
-        }
-      }
-    },
-    "file": {
+    "fields": {
+      "$comment": "Add your new fields here. Don't require them here, do that above in the item schema.",
       "type": "object",
       "properties": {
         "file:bits_per_sample": {
@@ -171,10 +160,16 @@
                 "type": "string"
               }
             }
-          },
-          "title": "Value Map"
+          }
         }
-      }
+
+      },
+      "patternProperties": {
+        "^(?!file:)": {
+          "$comment": "Above, change `template` to the prefix of this extension"
+        }
+      },
+      "additionalProperties": false
     }
   }
 }

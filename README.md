@@ -6,7 +6,7 @@
 - **Scope:** Item, Collection
 - **Extension [Maturity Classification](https://github.com/radiantearth/stac-spec/tree/master/extensions/README.md#extension-maturity):** Proposal
 - **Owner**: @m-mohr
-- **History**: [Prior to March 2nd 2021](https://github.com/radiantearth/stac-spec/commits/42930640d113f21ef8e21d27de9ad109a5a87263/extensions/file)
+- **History**: [Prior to March 2nd 2021](https://github.com/radiantearth/stac-spec/commits/4a841605ad83a16f45fcb88ed90117d6c77a7f04/extensions/file)
 
 Provides a way to specify file related details such as checksum, data type and size for assets in
 [STAC Items](https://github.com/radiantearth/stac-spec/blob/master/item-spec/item-spec.md) as well as [STAC Collections](https://github.com/radiantearth/stac-spec/blob/master/collection-spec/collection-spec.md) 

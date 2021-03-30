@@ -115,3 +115,34 @@ file with file content `test`.
 - Algorithm `sha2` (256 bits): `12209f86d081884c7d659a2feaa0c55ad015a3bf4f1b2b0b822cd15d6c15b0f00a08`
 - Algorithm `sha2` (256 bits truncated to 160 bits): `12149f86d081884c7d659a2feaa0c55ad015a3bf4f1b2b0b`
 - Algorithm `blake2b-128`: `90e4021044a8995dd50b6657a037a7839304535b`
+
+## Contributing
+
+All contributions are subject to the
+[STAC Specification Code of Conduct](https://github.com/radiantearth/stac-spec/blob/master/CODE_OF_CONDUCT.md).
+For contributions, please follow the
+[STAC specification contributing guide](https://github.com/radiantearth/stac-spec/blob/master/CONTRIBUTING.md) Instructions
+for running tests are copied here for convenience.
+
+### Running tests
+
+The same checks that run as checks on PR's are part of the repository and can be run locally to verify that changes are valid. 
+To run tests locally, you'll need `npm`, which is a standard part of any [node.js installation](https://nodejs.org/en/download/).
+
+First you'll need to install everything with npm once. Just navigate to the root of this repository and on 
+your command line run:
+```bash
+npm install
+```
+
+Then to check markdown formatting and test the examples against the JSON schema, you can run:
+```bash
+npm test
+```
+
+This will spit out the same texts that you see online, and you can then go and fix your markdown or examples.
+
+If the tests reveal formatting problems with the examples, you can fix them with:
+```bash
+npm run format-examples
+```

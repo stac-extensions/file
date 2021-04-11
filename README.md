@@ -103,7 +103,7 @@ The allowed values for `file:data_type` are:
 `file:checksum` was previously defined in the
 [`checksum` extension](https://github.com/radiantearth/stac-spec/tree/v1.0.0-beta.2/extensions/checksum/README.md)
 and the field name was `checksum:multihash` before
-STAC v1.0.0-beta.3. The specification of the field has
+STAC v1.0.0-rc.1. The specification of the field has
 not changed.
 
 Checksum examples for some algorithms supported by

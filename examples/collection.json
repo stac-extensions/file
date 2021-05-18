@@ -1,5 +1,5 @@
 {
-  "stac_version": "1.0.0-rc.1",
+  "stac_version": "1.0.0-rc.4",
   "stac_extensions": [
     "https://stac-extensions.github.io/file/v1.0.0/schema.json"
   ],
@@ -43,13 +43,8 @@
       "roles": [
         "thumbnail"
       ],
-      "file:data_type": "uint8",
       "file:checksum": "90e4021044a8995dd50b6657a037a7839304535b",
-      "file:nodata": [
-        255
-      ],
-      "file:size": 153600,
-      "file:bits_per_sample": 8
+      "file:size": 153600
     }
   }
 }

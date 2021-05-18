@@ -16,6 +16,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Removed
 
+- `file:bits_per_sample`: now in `raster:bands.bits_per_sample`
+- `file:data_type`: now in `raster:bands.data_type`
+- `file:nodata`: now in `raster:bands.nodata`
+- `file:unit`: now in `raster:bands.unit`
+- `file:values`
+
 ### Fixed
 
 - JSON Schema checks `stac_extensions` field in Collections

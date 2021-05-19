@@ -1,7 +1,7 @@
 {
   "id": "S1A_EW_GRDM_1SSH_20181103T235855_20181103T235955_024430_02AD5D_5616",
   "type": "Feature",
-  "stac_version": "1.0.0-rc.1",
+  "stac_version": "1.0.0-rc.4",
   "stac_extensions": [
     "https://stac-extensions.github.io/file/v1.0.0/schema.json"
   ],
@@ -68,7 +68,6 @@
         "HH"
       ],
       "file:byte_order": "little-endian",
-      "file:data_type": "uint16",
       "file:size": 209715200,
       "file:header_size": 4096,
       "file:checksum": "90e40210163700a8a6501eccd00b6d3b44ddaed0"
@@ -78,7 +77,6 @@
       "title": "Thumbnail",
       "type": "image/png",
       "file:byte_order": "big-endian",
-      "file:data_type": "uint8",
       "file:size": 146484,
       "file:checksum": "90e40210f52acd32b09769d3b1871b420789456c"
     }

@@ -81,11 +81,6 @@
       "$comment": "Add your new fields here. Don't require them here, do that above in the item schema.",
       "type": "object",
       "properties": {
-        "file:bits_per_sample": {
-          "type": "integer",
-          "minimum": 0,
-          "title": "Bits per Sample"
-        },
         "file:byte_order": {
           "type": "string",
           "enum": [
@@ -99,48 +94,15 @@
           "pattern": "^[a-f0-9]+$",
           "title": "File Checksum (Multihash)"
         },
-        "file:data_type": {
-          "type": "string",
-          "enum": [
-            "int8",
-            "int16",
-            "int32",
-            "int64",
-            "uint8",
-            "uint16",
-            "uint32",
-            "uint64",
-            "float16",
-            "float32",
-            "float64",
-            "cint16",
-            "cint32",
-            "cfloat32",
-            "cfloat64",
-            "other"
-          ],
-          "title": "File Data Type"
-        },
         "file:header_size": {
           "type": "integer",
           "minimum": 0,
           "title": "File Header Size"
         },
-        "file:nodata": {
-          "type": "array",
-          "items": {
-            "description": "Any data type is allowed"
-          },
-          "title": "No data values"
-        },
         "file:size": {
           "type": "integer",
           "minimum": 0,
           "title": "File Size"
-        },
-        "file:unit": {
-          "type": "string",
-          "title": "Unit"
         },
         "file:values": {
           "type": "array",
@@ -166,7 +128,6 @@
             }
           }
         }
-
       },
       "patternProperties": {
         "^(?!file:)": {

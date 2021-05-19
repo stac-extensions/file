@@ -24,14 +24,10 @@ The following fields can be used for assets (in the [`Asset Object`](https://git
 
 | Field Name           | Type                                    | Description                                                  |
 | -------------------- | --------------------------------------- | ------------------------------------------------------------ |
-| file:bits_per_sample | integer                                 | Bits per sample, e.g. 8, 16, 32, ...                         |
 | file:byte_order      | string                                  | The byte order of integer values in the file. One of `big-endian` or `little-endian`. |
 | file:checksum        | string                                  | Provides a way to specify file [checksums](#checksums) (e.g. BLAKE2, MD5, SHA1, SHA2, SHA3). The hashes are self-identifying hashes as described in the [Multihash specification](https://github.com/multiformats/multihash) and must be encoded as hexadecimal (base 16) string with lowercase letters. |
-| file:data_type       | string                                  | The data type of the file. One of the [data types](#data-types) below. |
 | file:header_size     | integer                                 | The header [size](#sizes) of the file, specified in bytes.   |
-| file:nodata          | \[any]                                  | Value(s) for no-data.                                        |
 | file:size            | integer                                 | The file [size](#sizes), specified in bytes.                 |
-| file:unit            | string                                  | The unit of measurement for the values in the file, preferably compliant to [UDUNITS-2](https://ncics.org/portfolio/other-resources/udunits2/) units (singular). |
 | file:values          | \[[Mapping Object](#mapping-object)\]   | Lists the value that are in the file and describes their meaning. See the [Mapping Object](#mapping-object) chapter for an example. If given, at least one array element is required. |
 
 **Note:** File specific details should not be part of the Item Assets Definition extension to Collections.
@@ -67,36 +63,6 @@ need to use other data types to store the values in.
 For example, files with a size larger than around 2,14
 GB would exceed the maximum value for int32 and in
 JavaScript `BigInt` could be used then.
-
-### Data Types
-
-The data type gives information about the values in the file.
-This can be used to indicate the (maximum) range of numerical values expected.
-For example `uint8` indicates that the numbers are in a range between 0 and 255,
-they can never be smaller or larger. This can help to pick the optimal numerical
-data type when reading the files to keep memory consumption low.
-Nevertheless, it doesn't necessarily mean that the expected values fill the whole range.
-For example, there can be use cases for `uint8` that just use the numbers 0 to 10 for example.
-Through other extensions it might be possible to specify an exact value range so
-that visualizations can be optimized.
-The allowed values for `file:data_type` are:
-
-- `int8`: 8-bit integer
-- `int16`: 16-bit integer
-- `int32`: 32-bit integer
-- `int64`: 64-bit integer
-- `uint8`: unsigned 8-bit integer (common for 8-bit RGB PNG's)
-- `uint16`: unsigned 16-bit integer
-- `uint32`: unsigned 32-bit integer
-- `uint64`: unsigned 64-bit integer
-- `float16`: 16-bit float
-- `float32`: 32-bit float
-- `float64`: 64-big float
-- `cint16`: 16-bit complex integer
-- `cint32`: 32-bit complex integer
-- `cfloat32`: 32-bit complex float
-- `cfloat64`: 64-bit complex float
-- `other`: Other data type than the ones listed above (e.g. boolean, string, higher precision numbers)
 
 ### Checksums
 

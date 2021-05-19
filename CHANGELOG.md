@@ -20,7 +20,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - `file:data_type`: now in `raster:bands.data_type`
 - `file:nodata`: now in `raster:bands.nodata`
 - `file:unit`: now in `raster:bands.unit`
-- `file:values`
 
 ### Fixed
 

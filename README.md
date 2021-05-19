@@ -28,8 +28,28 @@ The following fields can be used for assets (in the [`Asset Object`](https://git
 | file:checksum        | string                                  | Provides a way to specify file [checksums](#checksums) (e.g. BLAKE2, MD5, SHA1, SHA2, SHA3). The hashes are self-identifying hashes as described in the [Multihash specification](https://github.com/multiformats/multihash) and must be encoded as hexadecimal (base 16) string with lowercase letters. |
 | file:header_size     | integer                                 | The header [size](#sizes) of the file, specified in bytes.   |
 | file:size            | integer                                 | The file [size](#sizes), specified in bytes.                 |
+| file:values          | \[[Mapping Object](#mapping-object)\]   | Lists the value that are in the file and describes their meaning. See the [Mapping Object](#mapping-object) chapter for an example. If given, at least one array element is required. |
 
 **Note:** File specific details should not be part of the Item Assets Definition extension to Collections.
+
+### Mapping Object
+
+Value maps are used by assets that are used as classification layers and give details about the values in the asset and their meanings.
+
+| Field Name | Data Type | Description                                                  |
+| ---------- | --------- | ------------------------------------------------------------ |
+| values     | \[any]    | **REQUIRED.** The value(s) in the file. At least one array element is required. |
+| summary    | string    | **REQUIRED.** A short description of the value(s).           |
+
+ For example for a cloud cover mask, `file:values` property could contain the following data:
+
+```json
+[
+	{"value": [0], "summary": "clear"},
+	{"value": [1], "summary": "clouds"},
+	{"value": [2], "summary": "cloud shadows"}
+]
+```
 
 ### Sizes
 

@@ -127,6 +127,11 @@
               }
             }
           }
+        },
+        "file:path": {
+          "type": "string",
+          "pattern": "^(?!-)[^\/]+(?<!-)(\/(?!-)[^\/]+(?<!-))*$",
+          "title": "Relative File Path"
         }
       },
       "patternProperties": {

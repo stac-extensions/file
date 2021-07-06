@@ -9,6 +9,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- `file:path` to indicate a relative path for the asset file.
+
 ### Changed
 
 ### Deprecated

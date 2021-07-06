@@ -29,6 +29,7 @@ The following fields can be used for assets (in the [`Asset Object`](https://git
 | file:header_size     | integer                                 | The header [size](#sizes) of the file, specified in bytes.   |
 | file:size            | integer                                 | The file [size](#sizes), specified in bytes.                 |
 | file:values          | \[[Mapping Object](#mapping-object)\]   | Lists the value that are in the file and describes their meaning. See the [Mapping Object](#mapping-object) chapter for an example. If given, at least one array element is required. |
+| file:path            | string                                  | [Relative path](#relative-path) of the asset                 |
 
 **Note:** File specific details should not be part of the Item Assets Definition extension to Collections.
 
@@ -81,6 +82,16 @@ file with file content `test`.
 - Algorithm `sha2` (256 bits): `12209f86d081884c7d659a2feaa0c55ad015a3bf4f1b2b0b822cd15d6c15b0f00a08`
 - Algorithm `sha2` (256 bits truncated to 160 bits): `12149f86d081884c7d659a2feaa0c55ad015a3bf4f1b2b0b`
 - Algorithm `blake2b-128`: `90e4021044a8995dd50b6657a037a7839304535b`
+
+### Relative path
+
+An asset is referenced with a simple URL that do not give any indication about how the asset file might be organized if downloaded in a file system.
+Some software requires that the asset is placed in a specific relative folder or the metadata asset might references relative path to another asset.
+The `file:path` field indicates a relative path within the "download" directory in order for the receiving agent to organize it as expected.
+This information is similar to the [`Content-Disposition` header](https://www.w3.org/Protocols/rfc2616/rfc2616-sec19.html#sec19.5.1) in HTTP protocol.
+
+For instance, [SNAP toolbox](https://step.esa.int/main/) reads the SAFE manifest to open a product that references the different files
+(e.g. image bands) relatively and thus expects to find them in the referenced folder (e.g. IMG_DATA).
 
 ## Contributing
 

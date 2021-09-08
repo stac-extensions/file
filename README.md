@@ -87,7 +87,8 @@ file with file content `test`.
 
 An asset is referenced with a simple URL that do not give any indication about how the asset file might be organized if downloaded in a file system.
 Some software requires that the asset is placed in a specific relative folder or the metadata asset might references relative path to another asset.
-The `file:path` field indicates a path (recommended as relative) within the "download" directory in order for the downloading agent to organize it as expected.
+The `file:path` field indicates a path (relative is recommended) within the "download" directory in order
+for the downloading agent to organize it as expected.
 This information is similar to the [`Content-Disposition` header](https://www.w3.org/Protocols/rfc2616/rfc2616-sec19.html#sec19.5.1) in HTTP protocol.
 
 For instance, [SNAP toolbox](https://step.esa.int/main/) reads the SAFE manifest to open a product that references the different files
@@ -103,10 +104,10 @@ for running tests are copied here for convenience.
 
 ### Running tests
 
-The same checks that run as checks on PR's are part of the repository and can be run locally to verify that changes are valid. 
+The same checks that run as checks on PR's are part of the repository and can be run locally to verify that changes are valid.
 To run tests locally, you'll need `npm`, which is a standard part of any [node.js installation](https://nodejs.org/en/download/).
 
-First you'll need to install everything with npm once. Just navigate to the root of this repository and on 
+First you'll need to install everything with npm once. Just navigate to the root of this repository and on
 your command line run:
 ```bash
 npm install

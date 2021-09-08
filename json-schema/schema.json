@@ -128,7 +128,7 @@
             }
           }
         },
-        "file:path": {
+        "file:rel_path": {
           "type": "string",
           "pattern": "^(?!-)[^\/]+(?<!-)(\/(?!-)[^\/]+(?<!-))*$",
           "title": "Relative File Path"

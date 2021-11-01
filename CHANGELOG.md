@@ -9,8 +9,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
-- `file:local_path` to indicate a relative path for the asset file.
-
 ### Changed
 
 ### Deprecated
@@ -18,6 +16,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Removed
 
 ### Fixed
+
+## [v2.1.0]
+
+### Added
+
+- `file:local_path` to indicate a relative local path for the asset file. [[PR#7]](https://github.com/stac-extensions/file/pull/7#)
 
 ## [v2.0.0]
 
@@ -40,6 +44,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Initial release
 
-[Unreleased]: <https://github.com/stac-extensions/template/compare/v2.0.0...HEAD>
+[Unreleased]: <https://github.com/stac-extensions/template/compare/v2.1.0...HEAD>
+[v2.1.0]: <https://github.com/stac-extensions/tree/v2.1.0>
 [v2.0.0]: <https://github.com/stac-extensions/tree/v2.0.0>
 [v1.0.0]: <https://github.com/stac-extensions/tree/v1.0.0>

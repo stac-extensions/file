@@ -29,7 +29,7 @@ The following fields can be used for assets (in the [`Asset Object`](https://git
 | file:header_size     | integer                                 | The header [size](#sizes) of the file, specified in bytes.   |
 | file:size            | integer                                 | The file [size](#sizes), specified in bytes.                 |
 | file:values          | \[[Mapping Object](#mapping-object)\]   | Lists the value that are in the file and describes their meaning. See the [Mapping Object](#mapping-object) chapter for an example. If given, at least one array element is required. |
-| file:local_path      | string                                  | The file [Local path](#local-path) of the asset (must be relative) |
+| file:local_path      | string                                  | A relative [local path](#local-path) for the asset. |
 
 **Note:** File specific details should not be part of the Item Assets Definition extension to Collections.
 
@@ -73,10 +73,9 @@ and the field name was `checksum:multihash` before
 STAC v1.0.0-rc.1. The specification of the field has
 not changed.
 
-Checksum examples for some algorithms supported by
-[Multihash](https://github.com/multiformats/multihash)
-in `file:checksum`. The examples are given for a text
-file with file content `test`.
+Below is a list with checksum examples for some algorithms supported by
+[Multihash](https://github.com/multiformats/multihash).
+The checksums given are for an ASCII text file with the content `test`.
 
 - Algorithm `sha1` (160 bits): `1114a94a8fe5ccb19ba61c4c0873d391e987982fbbd3`
 - Algorithm `sha2` (256 bits): `12209f86d081884c7d659a2feaa0c55ad015a3bf4f1b2b0b822cd15d6c15b0f00a08`
@@ -85,14 +84,30 @@ file with file content `test`.
 
 ### Local Path
 
-An asset is referenced with a simple URL that do not give any indication about how the asset file might be organized if downloaded in a file system.
-Some software requires that the asset is placed in a specific relative folder or the metadata asset might references relative path to another asset.
-The `file:local_path` field indicates a **relative** path from the "download" directory in order for the downloading agent
-to organize it as expected.
-This information is similar to the [`Content-Disposition` header](https://www.w3.org/Protocols/rfc2616/rfc2616-sec19.html#sec19.5.1) in HTTP protocol.
+An asset is referenced with a simple URL that does not give
+a good indication about how the file might be organized together
+with the other assets when downloaded and/or extracted to a
+local filesystem.
 
-For instance, [SNAP toolbox](https://step.esa.int/main/) reads the SAFE manifest to open a product that references the different files
-(e.g. image bands) relatively and thus expects to find them in the referenced folder (e.g. IMG_DATA).
+By default, the main purpose is file downloading but the purpose
+of this field may be refined by other extensions, e.g., an archive
+extension may indicate the location of the asset in a ZIP or TAR
+file which at the same time is also the local path to extract the
+file to.
+For example, some software require that the asset is placed in
+a specific relative folder or the metadata asset might contain
+references relative to another asset.
+
+The `file:local_path` field indicates a **relative** path that
+can be used by clients for different purposes to organize the
+files locally. For compatibility reasons the name-separator
+character in paths **must** be `/` and the Windows separator `\`
+is **not** allowed.
+
+**Example use case:**
+[SNAP toolbox](https://step.esa.int/main/) reads the SAFE manifest
+to open a product that references the different files (e.g. image bands)
+relatively and thus expects to find them in the referenced folder (e.g. `IMG_DATA`).
 
 ## Contributing
 

@@ -130,7 +130,7 @@
         },
         "file:local_path": {
           "type": "string",
-          "pattern": "^(?!-)[^\/]+(?<!-)(\/(?!-)[^\/]+(?<!-))*$",
+          "pattern": "^[^\r\n\t\\:'\"/]+(/[^\r\n\t\\:'\"/]+)*/?$",
           "title": "Relative File Path"
         }
       },

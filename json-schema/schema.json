@@ -26,10 +26,7 @@
             "links": {
               "type": "array",
               "items": {
-                "type": "object",
-                "additionalProperties": {
-                  "$ref": "#/definitions/fields"
-                }
+                "$ref": "#/definitions/fields"
               }
             }
           }
@@ -55,10 +52,7 @@
             "links": {
               "type": "array",
               "items": {
-                "type": "object",
-                "additionalProperties": {
-                  "$ref": "#/definitions/fields"
-                }
+                "$ref": "#/definitions/fields"
               }
             }
           }
@@ -89,10 +83,7 @@
             "links": {
               "type": "array",
               "items": {
-                "type": "object",
-                "additionalProperties": {
-                  "$ref": "#/definitions/fields"
-                }
+                "$ref": "#/definitions/fields"
               }
             },
             "item_assets": {

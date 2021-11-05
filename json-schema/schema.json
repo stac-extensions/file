@@ -22,6 +22,15 @@
               "additionalProperties": {
                 "$ref": "#/definitions/fields"
               }
+            },
+            "links": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "additionalProperties": {
+                  "$ref": "#/definitions/fields"
+                }
+              }
             }
           }
         },
@@ -44,9 +53,12 @@
               "const": "Catalog"
             },
             "links": {
-              "type": "object",
-              "additionalProperties": {
-                "$ref": "#/definitions/fields"
+              "type": "array",
+              "items": {
+                "type": "object",
+                "additionalProperties": {
+                  "$ref": "#/definitions/fields"
+                }
               }
             }
           }
@@ -72,6 +84,15 @@
               "type": "object",
               "additionalProperties": {
                 "$ref": "#/definitions/fields"
+              }
+            },
+            "links": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "additionalProperties": {
+                  "$ref": "#/definitions/fields"
+                }
               }
             },
             "item_assets": {

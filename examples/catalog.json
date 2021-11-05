@@ -15,7 +15,6 @@
       "href": "./some-item.json",
       "type": "application/json",
       "title": "Some item",
-      "file:header_size": 1972
       "file:size": 8675309
     },
     {

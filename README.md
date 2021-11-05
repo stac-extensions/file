@@ -9,7 +9,9 @@
 - **History**: [Prior to March 2nd 2021](https://github.com/radiantearth/stac-spec/commits/4a841605ad83a16f45fcb88ed90117d6c77a7f04/extensions/file)
 
 Provides a way to specify file related details such as checksum, data type and size for assets in
-[STAC Items](https://github.com/radiantearth/stac-spec/blob/master/item-spec/item-spec.md), [STAC Catalogs](https://github.com/radiantearth/stac-spec/blob/master/catalog-spec/catalog-spec.md), as well as [STAC Collections](https://github.com/radiantearth/stac-spec/blob/master/collection-spec/collection-spec.md) that implement collection-level assets.
+[STAC Items](https://github.com/radiantearth/stac-spec/blob/master/item-spec/item-spec.md),
+[STAC Catalogs](https://github.com/radiantearth/stac-spec/blob/master/catalog-spec/catalog-spec.md), as well as
+[STAC Collections](https://github.com/radiantearth/stac-spec/blob/master/collection-spec/collection-spec.md) that implement collection-level assets.
 
 - Examples:
   - [Item example](examples/item.json): Shows the basic usage of the extension in a STAC Item
@@ -20,7 +22,9 @@ Provides a way to specify file related details such as checksum, data type and s
 
 ## *Asset / Link Object* fields
 
-The following fields can be used for assets (in the [`Asset Object`](https://github.com/radiantearth/stac-spec/blob/master/item-spec/item-spec.md#asset-object)) or links (in the [`Link Object`](https://github.com/radiantearth/stac-spec/blob/master/item-spec/item-spec.md#link-object)).
+The following fields can be used for assets (in the
+[`Asset Object`](https://github.com/radiantearth/stac-spec/blob/master/item-spec/item-spec.md#asset-object)) or links (in the
+[`Link Object`](https://github.com/radiantearth/stac-spec/blob/master/item-spec/item-spec.md#link-object)).
 
 | Field Name           | Type                                    | Description                                                  |
 | -------------------- | --------------------------------------- | ------------------------------------------------------------ |

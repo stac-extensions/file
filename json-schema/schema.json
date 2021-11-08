@@ -42,8 +42,7 @@
         {
           "type": "object",
           "required": [
-            "type",
-            "links"
+            "type"
           ],
           "properties": {
             "type": {

@@ -1,5 +1,8 @@
 {
   "id": "examples",
+  "stac_extensions": [
+    "https://stac-extensions.github.io/file/v2.1.0/schema.json"
+  ],
   "type": "Catalog",
   "title": "Example Catalog",
   "stac_version": "1.0.0",

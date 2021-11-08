@@ -2,7 +2,7 @@
   "$schema": "http://json-schema.org/draft-07/schema#",
   "$id": "https://stac-extensions.github.io/file/v2.1.0/schema.json#",
   "title": "File Info Extension",
-  "description": "STAC File Info Extension for STAC Items and STAC Collections.",
+  "description": "STAC File Info Extension for STAC Items, STAC Catalogs, and STAC Collections.",
   "oneOf": [
     {
       "$comment": "This is the schema for STAC Items.",
@@ -20,6 +20,37 @@
             "assets": {
               "type": "object",
               "additionalProperties": {
+                "$ref": "#/definitions/fields"
+              }
+            },
+            "links": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/fields"
+              }
+            }
+          }
+        },
+        {
+          "$ref": "#/definitions/stac_extensions"
+        }
+      ]
+    },
+    {
+      "$comment": "This is the schema for STAC Catalogs.",
+      "allOf": [
+        {
+          "type": "object",
+          "required": [
+            "type"
+          ],
+          "properties": {
+            "type": {
+              "const": "Catalog"
+            },
+            "links": {
+              "type": "array",
+              "items": {
                 "$ref": "#/definitions/fields"
               }
             }
@@ -45,6 +76,12 @@
             "assets": {
               "type": "object",
               "additionalProperties": {
+                "$ref": "#/definitions/fields"
+              }
+            },
+            "links": {
+              "type": "array",
+              "items": {
                 "$ref": "#/definitions/fields"
               }
             },

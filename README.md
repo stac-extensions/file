@@ -3,24 +3,28 @@
 - **Title:** File Info
 - **Identifier:** <https://stac-extensions.github.io/file/v2.1.0/schema.json>
 - **Field Name Prefix:** file
-- **Scope:** Item, Collection
+- **Scope:** Item, Catalog, Collection
 - **Extension [Maturity Classification](https://github.com/radiantearth/stac-spec/tree/master/extensions/README.md#extension-maturity):** Proposal
 - **Owner**: @m-mohr
 - **History**: [Prior to March 2nd 2021](https://github.com/radiantearth/stac-spec/commits/4a841605ad83a16f45fcb88ed90117d6c77a7f04/extensions/file)
 
 Provides a way to specify file related details such as checksum, data type and size for assets in
-[STAC Items](https://github.com/radiantearth/stac-spec/blob/master/item-spec/item-spec.md) as well as [STAC Collections](https://github.com/radiantearth/stac-spec/blob/master/collection-spec/collection-spec.md) 
-that implement collection-level assets.
+[STAC Items](https://github.com/radiantearth/stac-spec/blob/master/item-spec/item-spec.md),
+[STAC Catalogs](https://github.com/radiantearth/stac-spec/blob/master/catalog-spec/catalog-spec.md), as well as
+[STAC Collections](https://github.com/radiantearth/stac-spec/blob/master/collection-spec/collection-spec.md) that implement collection-level assets.
 
 - Examples:
   - [Item example](examples/item.json): Shows the basic usage of the extension in a STAC Item
+  - [Catalog example](examples/catalog.json): Shows the basic usage of the extension in a STAC Catalog
   - [Collection example](examples/collection.json): Shows the basic usage of the extension in a STAC Collection
 - [JSON Schema](json-schema/schema.json)
 - [Changelog](./CHANGELOG.md)
 
-## *Asset Object* fields
+## *Asset / Link Object* fields
 
-The following fields can be used for assets (in the [`Asset Object`](https://github.com/radiantearth/stac-spec/blob/master/item-spec/item-spec.md#asset-object)).
+The following fields can be used for assets (in the
+[`Asset Object`](https://github.com/radiantearth/stac-spec/blob/master/item-spec/item-spec.md#asset-object)) or links (in the
+[`Link Object`](https://github.com/radiantearth/stac-spec/blob/master/item-spec/item-spec.md#link-object)).
 
 | Field Name           | Type                                    | Description                                                  |
 | -------------------- | --------------------------------------- | ------------------------------------------------------------ |
@@ -29,13 +33,13 @@ The following fields can be used for assets (in the [`Asset Object`](https://git
 | file:header_size     | integer                                 | The header [size](#sizes) of the file, specified in bytes.   |
 | file:size            | integer                                 | The file [size](#sizes), specified in bytes.                 |
 | file:values          | \[[Mapping Object](#mapping-object)\]   | Lists the value that are in the file and describes their meaning. See the [Mapping Object](#mapping-object) chapter for an example. If given, at least one array element is required. |
-| file:local_path      | string                                  | A relative [local path](#local-path) for the asset. |
+| file:local_path      | string                                  | A relative [local path](#local-path) for the asset/link. |
 
 **Note:** File specific details should not be part of the Item Assets Definition extension to Collections.
 
 ### Mapping Object
 
-Value maps are used by assets that are used as classification layers and give details about the values in the asset and their meanings.
+Value maps are used by assets/links that are used as classification layers and give details about the values in the asset/link and their meanings.
 
 | Field Name | Data Type | Description                                                  |
 | ---------- | --------- | ------------------------------------------------------------ |
@@ -84,19 +88,19 @@ The checksums given are for an ASCII text file with the content `test`.
 
 ### Local Path
 
-An asset is referenced with a simple URL that does not give
+An asset/link is referenced with a simple URL that does not give
 a good indication about how the file might be organized together
-with the other assets when downloaded and/or extracted to a
+with the other assets/links when downloaded and/or extracted to a
 local filesystem.
 
 By default, the main purpose is file downloading but the purpose
 of this field may be refined by other extensions, e.g., an archive
-extension may indicate the location of the asset in a ZIP or TAR
+extension may indicate the location of the asset/link in a ZIP or TAR
 file which at the same time is also the local path to extract the
 file to.
-For example, some software require that the asset is placed in
-a specific relative folder or the metadata asset might contain
-references relative to another asset.
+For example, some software require that the asset/link is placed in
+a specific relative folder or the metadata asset/link might contain
+references relative to another asset/link.
 
 The `file:local_path` field indicates a **relative** path that
 can be used by clients for different purposes to organize the

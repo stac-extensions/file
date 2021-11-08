@@ -22,6 +22,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 - `file:local_path` to indicate a relative local path for the asset file. [[PR#7]](https://github.com/stac-extensions/file/pull/7#)
+- Support for STAC Catalogs and link objects. [#9](https://github.com/stac-extensions/file/pull/9)
 
 ## [v2.0.0]
 

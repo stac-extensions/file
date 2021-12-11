@@ -167,7 +167,7 @@
         },
         "file:local_path": {
           "type": "string",
-          "pattern": "^[^\r\n\t\\:'\"/]+(/[^\r\n\t\\:'\"/]+)*/?$",
+          "pattern": "^[^\\r\\n\\t\\\\:'\"/]+(/[^\\r\\n\\t\\\\:'\"/]+)*/?$",
           "title": "Relative File Path"
         }
       },

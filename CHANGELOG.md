@@ -13,6 +13,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Deprecated
 
+- `file:values` in favor of the [classification extension](https://github.com/stac-extensions/classification/). [#11](https://github.com/stac-extensions/file/pull/11)
+
 ### Removed
 
 ### Fixed

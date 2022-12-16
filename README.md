@@ -4,7 +4,7 @@
 - **Identifier:** <https://stac-extensions.github.io/file/v2.1.0/schema.json>
 - **Field Name Prefix:** file
 - **Scope:** Item, Catalog, Collection
-- **Extension [Maturity Classification](https://github.com/radiantearth/stac-spec/tree/master/extensions/README.md#extension-maturity):** Proposal
+- **Extension [Maturity Classification](https://github.com/radiantearth/stac-spec/tree/master/extensions/README.md#extension-maturity):** Stable
 - **Owner**: @m-mohr
 - **History**: [Prior to March 2nd 2021](https://github.com/radiantearth/stac-spec/commits/4a841605ad83a16f45fcb88ed90117d6c77a7f04/extensions/file)
 
